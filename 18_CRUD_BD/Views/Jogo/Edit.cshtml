@@ -1,0 +1,46 @@
+@model _18_CRUD_BD.Models.Jogo
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1 class="text-center">Editar <i class="bi bi-pencil"></i></h1>
+
+<h4><i class="bi bi-controller"></i> Jogo</h4>
+<hr/>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="JogoId" />
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <label asp-for="Descricao" class="control-label"></label>
+                <input asp-for="Descricao" class="form-control" />
+                <span asp-validation-for="Descricao" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <label asp-for="Imagem" class="control-label"></label>
+                <input asp-for="Imagem" class="form-control" />
+                <span asp-validation-for="Imagem" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check mt-3">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Ativo" /> @Html.DisplayNameFor(model => model.Ativo)
+                </label>
+            </div>
+            <div class="form-group mt-3">
+                <input type="submit" value="Save" class="btn btn-dark" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="mt-3">
+    <a asp-action="Index" class="btn btn-dark">Voltar para Lista <i class="bi bi-arrow-counterclockwise"></i></a>
+</div>
+
